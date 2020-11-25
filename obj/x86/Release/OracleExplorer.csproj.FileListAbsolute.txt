@@ -1,0 +1,11 @@
+D:\work\OracleExplorer-master\bin\Release\WindowsApplication.exe.config
+D:\work\OracleExplorer-master\bin\Release\WindowsApplication.exe
+D:\work\OracleExplorer-master\bin\Release\WindowsApplication.pdb
+D:\work\OracleExplorer-master\obj\x86\Release\OracleExplorer.csprojAssemblyReference.cache
+D:\work\OracleExplorer-master\obj\x86\Release\OracleExplorer.EditConnection.resources
+D:\work\OracleExplorer-master\obj\x86\Release\OracleExplorer.MainWindow.resources
+D:\work\OracleExplorer-master\obj\x86\Release\OracleExplorer.OracleExplorer.Properties.Resource.resources
+D:\work\OracleExplorer-master\obj\x86\Release\OracleExplorer.csproj.GenerateResource.cache
+D:\work\OracleExplorer-master\obj\x86\Release\OracleExplorer.csproj.CoreCompileInputs.cache
+D:\work\OracleExplorer-master\obj\x86\Release\WindowsApplication.exe
+D:\work\OracleExplorer-master\obj\x86\Release\WindowsApplication.pdb
