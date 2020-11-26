@@ -7,7 +7,8 @@ using System.Text;
 using System.Windows.Forms;
 
 using OracleExplorer.Code;
-using System.Data.OracleClient;
+//using System.Data.OracleClient;
+using Oracle.ManagedDataAccess.Client;
 
 namespace OracleExplorer
 {
