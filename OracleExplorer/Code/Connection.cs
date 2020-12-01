@@ -52,7 +52,7 @@ namespace OracleExplorer.Code
           using (OracleConnection conn = new OracleConnection(ConnectionString))
           {
             conn.Open();
-            string sql = "select distinct owner from sys.all_objects where object_type in ('TABLE','VIEW') order by owner";
+            string sql = String.Format(@"select distinct owner from sys.all_objects where object_type in ('TABLE','VIEW') and owner='{0}'", User.ToUpper());
             using (OracleCommand comm = new OracleCommand(sql, conn))
             {
               using (OracleDataReader rdr = comm.ExecuteReader())

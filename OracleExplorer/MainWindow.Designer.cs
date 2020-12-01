@@ -35,13 +35,18 @@ namespace OracleExplorer
             this.treeConnections = new System.Windows.Forms.TreeView();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.lblConn = new System.Windows.Forms.Label();
-            this.gridOutput = new System.Windows.Forms.DataGridView();
             this.bnHelp = new System.Windows.Forms.Button();
             this.bnEdit = new System.Windows.Forms.Button();
             this.bnDelete = new System.Windows.Forms.Button();
             this.bnNew = new System.Windows.Forms.Button();
             this.bnExecute = new System.Windows.Forms.Button();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.textEditorControl1 = new ICSharpCode.TextEditor.TextEditorControlEx();
+            this.gridOutput = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridOutput)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,20 +83,6 @@ namespace OracleExplorer
             this.lblConn.Size = new System.Drawing.Size(71, 12);
             this.lblConn.TabIndex = 2;
             this.lblConn.Text = "Connection:";
-            // 
-            // gridOutput
-            // 
-            this.gridOutput.AllowUserToAddRows = false;
-            this.gridOutput.AllowUserToDeleteRows = false;
-            this.gridOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridOutput.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridOutput.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridOutput.Location = new System.Drawing.Point(248, 103);
-            this.gridOutput.Name = "gridOutput";
-            this.gridOutput.Size = new System.Drawing.Size(504, 310);
-            this.gridOutput.TabIndex = 6;
             // 
             // bnHelp
             // 
@@ -159,30 +150,60 @@ namespace OracleExplorer
             this.bnExecute.UseVisualStyleBackColor = true;
             this.bnExecute.Click += new System.EventHandler(this.bnExecute_Click);
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.Location = new System.Drawing.Point(248, 37);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.textEditorControl1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.gridOutput);
+            this.splitContainer1.Size = new System.Drawing.Size(504, 377);
+            this.splitContainer1.SplitterDistance = 132;
+            this.splitContainer1.TabIndex = 9;
+            // 
             // textEditorControl1
             // 
-            this.textEditorControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textEditorControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textEditorControl1.FoldingStrategy = "XML";
             this.textEditorControl1.Font = new System.Drawing.Font("Courier New", 10F);
-            this.textEditorControl1.Location = new System.Drawing.Point(248, 35);
+            this.textEditorControl1.Location = new System.Drawing.Point(0, 0);
             this.textEditorControl1.Name = "textEditorControl1";
-            this.textEditorControl1.Size = new System.Drawing.Size(504, 62);
+            this.textEditorControl1.Size = new System.Drawing.Size(504, 132);
             this.textEditorControl1.SyntaxHighlighting = "SQL";
-            this.textEditorControl1.TabIndex = 8;
+            this.textEditorControl1.TabIndex = 9;
+            // 
+            // gridOutput
+            // 
+            this.gridOutput.AllowUserToAddRows = false;
+            this.gridOutput.AllowUserToDeleteRows = false;
+            this.gridOutput.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridOutput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridOutput.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.gridOutput.Location = new System.Drawing.Point(0, 0);
+            this.gridOutput.Name = "gridOutput";
+            this.gridOutput.Size = new System.Drawing.Size(504, 241);
+            this.gridOutput.TabIndex = 7;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 422);
-            this.Controls.Add(this.textEditorControl1);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.bnHelp);
             this.Controls.Add(this.bnEdit);
             this.Controls.Add(this.bnDelete);
             this.Controls.Add(this.bnNew);
             this.Controls.Add(this.bnExecute);
-            this.Controls.Add(this.gridOutput);
             this.Controls.Add(this.lblConn);
             this.Controls.Add(this.treeConnections);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -191,6 +212,10 @@ namespace OracleExplorer
             this.Text = "Oracle Explorer";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainWindow_FormClosed);
             this.Load += new System.EventHandler(this.MainWindow_Load);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridOutput)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -202,13 +227,14 @@ namespace OracleExplorer
         private System.Windows.Forms.TreeView treeConnections;
         private System.Windows.Forms.ImageList imageList;
         private System.Windows.Forms.Label lblConn;
-        private System.Windows.Forms.DataGridView gridOutput;
         private System.Windows.Forms.Button bnExecute;
         private System.Windows.Forms.Button bnNew;
         private System.Windows.Forms.Button bnDelete;
         private System.Windows.Forms.Button bnEdit;
         private System.Windows.Forms.Button bnHelp;
+        private System.Windows.Forms.SplitContainer splitContainer1;
         private TextEditorControlEx textEditorControl1;
+        private System.Windows.Forms.DataGridView gridOutput;
     }
 }
 

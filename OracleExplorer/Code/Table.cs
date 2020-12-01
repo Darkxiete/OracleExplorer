@@ -1,18 +1,20 @@
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace OracleExplorer.Code
 {
-  public class Table
-  {
-    public string Name;
-    public bool View=false;
-    public Schema ParentSchema;
-
-    public Table(Schema Parent)
+    public class Table
     {
-      ParentSchema = Parent;
+        public string Name;
+        public bool View = false;
+        public List<string> Columns = new List<string>();
+        public Schema ParentSchema;
+
+        public Table(Schema Parent)
+        {
+            ParentSchema = Parent;
+        }
     }
-  }
 }

@@ -122,13 +122,28 @@ These files can be obtained from the Oracle Instant Client from the oracle websi
                             n.ImageIndex = n.SelectedImageIndex = table.View ? 4 : 3;
                             n.Tag = table;
                             n.ToolTipText = "Double-click to query this table";
+                            n.Nodes.Add(loading);
+                            e.Node.Nodes.Add(n);
+                        }
+                    }
+                }
+
+                if (tag is Table) // Are we expanding a schema?
+                {
+                    using (new CursorHelper(this)) // Display the hourglass
+                    {
+                        e.Node.Nodes.Clear();
+                        foreach (string col in ((Table)tag).Columns)
+                        {
+                            TreeNode n = new TreeNode(col);
+                            n.ImageIndex = n.SelectedImageIndex = 4; // TODO
+                            n.Tag = col;
                             e.Node.Nodes.Add(n);
                         }
                     }
                 }
             }
         }
-
         private void treeConnections_DoubleClick(object sender, EventArgs e)
         {
             // Did they double click anything important?
